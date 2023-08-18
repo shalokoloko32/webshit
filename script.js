@@ -1,6 +1,25 @@
+const modeToggle = document.getElementById("dark-mode");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const videoPlayer = document.getElementById("video-player");
+
+// Initialize dark mode preference
+let darkModeEnabled = false;
+
+modeToggle.addEventListener("change", () => {
+  toggleDarkMode();
+});
+
+function toggleDarkMode() {
+  const body = document.body;
+  darkModeEnabled = !darkModeEnabled;
+  
+  if (darkModeEnabled) {
+    body.classList.add("dark-mode");
+  } else {
+    body.classList.remove("dark-mode");
+  }
+}
 
 searchButton.addEventListener("click", () => {
   const searchTerm = searchInput.value.trim();
