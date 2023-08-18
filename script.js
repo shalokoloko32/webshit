@@ -1,10 +1,7 @@
-const modeToggle = document.getElementById("dark-mode");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const videoPlayer = document.getElementById("video-player");
-
-// Initialize dark mode preference
-let darkModeEnabled = false;
+const modeToggle = document.getElementById("dark-mode");
 
 modeToggle.addEventListener("change", () => {
   toggleDarkMode();
@@ -12,13 +9,7 @@ modeToggle.addEventListener("change", () => {
 
 function toggleDarkMode() {
   const body = document.body;
-  darkModeEnabled = !darkModeEnabled;
-  
-  if (darkModeEnabled) {
-    body.classList.add("dark-mode");
-  } else {
-    body.classList.remove("dark-mode");
-  }
+  body.classList.toggle("dark-mode");
 }
 
 searchButton.addEventListener("click", () => {
